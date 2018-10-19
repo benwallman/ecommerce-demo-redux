@@ -1,20 +1,32 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
-import Panels from './Panels';
-import cakes from '../../cakes.json';
-
-test('correctly renders', () => {
-  const wrapper = shallow(<Panels />);
-  expect(wrapper.find('div')).toHaveLength(1);
-});
+import { Panels } from './Panels';
 
 test('displays the names for the all cakes', () => {
-  // 'Beautiful birthday cake'
-  // 'Lovely wedding cake'
-  // 'Cheesy, clicéd  cake'
-  const wrapper = mount(<Panels cakes={cakes} />);
+  const wrapper = mount(<Panels classes={{}} />);
   expect(wrapper.text()).toContain('Beautiful birthday cake');
   expect(wrapper.text()).toContain('Lovely wedding cake');
   expect(wrapper.text()).toContain('Cheesy, clicéd  cake');  
+});
+
+test('displays the prices for all the cakes', () => {
+  const wrapper = mount(<Panels classes={{}} />);
+  expect(wrapper.text()).toContain('£17.24');
+  expect(wrapper.text()).toContain('£33.02');
+  expect(wrapper.text()).toContain('£9.99');  
+});
+
+test('displays the images for all the cakes', () => {
+  const wrapper = mount(<Panels classes={{}} />);
+  const cardImages = wrapper.find('CardMedia');
+  expect(cardImages).toHaveLength(3);
+  const expectedImages = [
+    "https://images.pexels.com/photos/433527/pexels-photo-433527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/2226/food-couple-sweet-married.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  ];
+  cardImages.forEach((Node, index) => {
+    expect(Node.prop('image')).toBe(expectedImages[index]);
+  });
 });
