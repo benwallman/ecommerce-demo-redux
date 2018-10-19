@@ -44,8 +44,8 @@ export const Panels = ({ classes, addCake }) => (
       <Card className={classes.card} key={name}>
         <CardHeader
           action={
-            <IconButton>
-              <AddIcon onClick={addCake} />
+            <IconButton onClick={addCake} >
+              <AddIcon />
             </IconButton>
           }
           title={name}

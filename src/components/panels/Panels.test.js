@@ -12,7 +12,7 @@ test('displays the names for the all cakes', () => {
 
   expect(wrapper.text()).toContain('Beautiful birthday cake');
   expect(wrapper.text()).toContain('Lovely wedding cake');
-  expect(wrapper.text()).toContain('Cheesy, clicéd  cake');  
+  expect(wrapper.text()).toContain('Cheesy, clichéd  cake');  
 });
 
 test('displays the prices for all the cakes', () => {
