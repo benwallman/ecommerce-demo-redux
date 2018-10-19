@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Beautiful birthday cake",
+    "imageUrl": "https://images.pexels.com/photos/433527/pexels-photo-433527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "cost": "£17.24"
+  },
+  {
+    "name": "Lovely wedding cake",
+    "imageUrl": "https://images.pexels.com/photos/2226/food-couple-sweet-married.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "cost": "£33.02"
+  },
+  {
+    "name": "Cheesy, clicéd  cake",
+    "imageUrl": "https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "cost": "£9.99"
+  }
+]

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/header/Header';
 import { connect } from 'react-redux'
+
+import Header from './components/header/Header';
+import Panels from './components/panels/Panels';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Panels />
       </div>
     );
   }
