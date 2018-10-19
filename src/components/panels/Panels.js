@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -8,7 +10,12 @@ import IconButton from '@material-ui/core/IconButton';
 import red from '@material-ui/core/colors/red';
 import AddIcon from '@material-ui/icons/Add';
 
+import addCake from '../../actions/addCake';
 import cakes from '../../cakes.json';
+
+const mapDispatchToProps = dispatch => ({
+  addCake: () => dispatch(addCake())
+});
 
 const styles = theme => ({
   card: {
@@ -31,14 +38,14 @@ const styles = theme => ({
   }
 });
 
-export const Panels = ({ classes }) => (
+export const Panels = ({ classes, addCake }) => (
   <div className={classes.container}>
     {cakes.map(({ name, imageUrl, cost }) => (
       <Card className={classes.card} key={name}>
         <CardHeader
           action={
             <IconButton>
-              <AddIcon />
+              <AddIcon onClick={addCake} />
             </IconButton>
           }
           title={name}
@@ -56,6 +63,7 @@ export const Panels = ({ classes }) => (
 
 Panels.propTypes = {
   classes: PropTypes.object.isRequired,
+  addCake: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(Panels);
+export default connect(null, mapDispatchToProps)(withStyles(styles)(Panels));
