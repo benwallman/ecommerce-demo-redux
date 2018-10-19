@@ -1,10 +1,10 @@
-import signIn from './signIn';
+import addCake from './addCake';
 
-test('signIn should dispatch an action to sign the user in', async () => {
+test('addCake should dispatch an action to add a cake to the users basket', async () => {
   const expectedAction = {
-    type: 'SIGN_IN',
+    type: 'ADD_CAKE',
   };
   const dispatch = jest.fn();
-  await signIn()(dispatch);
+  await addCake()(dispatch);
   expect(dispatch).toBeCalledWith(expectedAction);
 });
