@@ -40,9 +40,11 @@ export const Header = ({ classes, numberOfCakes }) => (
         <div className={classes.grow} />
         <div className={classes.basket}>
           <IconButton color="inherit">
-            <Badge className={classes.margin} badgeContent={numberOfCakes} color="secondary">
-              <CakeIcon />
-            </Badge>
+            { numberOfCakes ? (
+              <Badge className={classes.margin} badgeContent={numberOfCakes} color="secondary">
+                <CakeIcon />
+              </Badge>
+            ): <CakeIcon /> }
           </IconButton>
         </div>
       </Toolbar>
